@@ -1,0 +1,11 @@
+1. A loop in programming is a series of steps/instructions that are to be repeated for a certain number of times 
+depending on whether certain conditions are reached. The program usually tracks a final result such as a sum, number of
+iterations or loops, etc.
+
+2. There are 3 main types of loops in Java programming: for loop, while loop, and do-while loop.
+A for loop loops through a certain block of code/commands for a set number of times. 
+A while loop also runs through a certain block of code/commands but not based on a set number of times, rather based on 
+the number of times a condition is met. A while loop may never iterate through the code or may even loop an infinite number of times.
+A do-while loop is similar to a while loop. The main difference is that the loop will iterate at least once.
+
+3. One would use a do-while loop if you want the program to loop through a block of code at least one time.
