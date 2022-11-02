@@ -1,6 +1,8 @@
 public class Solution13 {
     public static void main(String[] args) throws Exception {
-        int i, range = 50, sumDiv7 = 0;
+        int i; 
+        int range = 50;
+        int sumDiv7 = 0;
 
         for (i = 0; i <= range; i++) {
             if (i % 7 == 0) {

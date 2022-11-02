@@ -1,6 +1,8 @@
 public class Solution12 {
     public static void main(String[] args) throws Exception {
-        int i, range = 50, evenSum = 0;
+        int i;
+        int range = 50;
+        int evenSum = 0;
 
         for (i = 2; i <= range; i += 2) {
             evenSum += i;

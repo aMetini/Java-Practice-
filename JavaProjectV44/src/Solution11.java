@@ -11,7 +11,10 @@ public class Solution11 {
             
         // }
 
-        int range = 20, i = 1, sum = 0, average = 0;
+        int range = 20;
+        int i = 1;
+        int sum = 0;
+        int average = 0;
 
         while(i <= range) {
             sum += i;
