@@ -23,7 +23,7 @@ public class Solution4 {
         }
         System.out.println(Arrays.toString(array));
 
-        for (int i = 0; i < arraySize; i++) { // why do we need to minus 2 from array length   ?
+        for (int i = 0; i < arraySize; i++) { 
             if (array[i] == 0) {
                 array[i] = array[(i + 1) % arraySize];
             }
