@@ -63,8 +63,21 @@ public class Solution_9_to_16 {
         // System.out.println(yes + " respondents believe that the news is true while " + no + " respondents believe that the news is a hoax.");
 
         //Solution 13
+        Random rand = new Random();
+        int n = rand.nextInt(10);
+        //   int result = 1;
 
+        //   for (int i = 1; i <= n; i++) {
+        //     result = result * i;
+        //   }
+        //   System.out.println("The factorial of " + n + " is: " + result);
 
+        int result = 1, i;
+            
+        for (i = 2; i <= n; i++) {
+            result *= i;
+        }
+        System.out.println("The factorial of " + n + " is: " + result);
         // //Solution 14
         // Scanner scan = new Scanner(System.in);
         // System.out.println("Please enter an angle degree to convert into radians.");
@@ -78,18 +91,18 @@ public class Solution_9_to_16 {
         // double radians = scn.nextDouble();
         // System.out.println("You have indicated " + radians + " radians, which converts to " + Math.toDegrees(radians) + " degrees.");
 
-        //Solution 16
-        Random rndm = new Random();
-        int ageUser1 = rndm.nextInt(50);
-        int ageUser2 = rndm.nextInt(50);
+        // //Solution 16
+        // Random rndm = new Random();
+        // int ageUser1 = rndm.nextInt(50);
+        // int ageUser2 = rndm.nextInt(50);
 
-        if (ageUser1 > ageUser2) {
-            System.out.println("User 1 is older with an age of " + Math.max(ageUser1, ageUser2));
-        } else if (ageUser1 < ageUser2) {
-            System.out.println("User 2 is older with an age of " + Math.max(ageUser1, ageUser2));
-        } else {
-            System.out.println("Both User 1 and User 2 are the same age");
-        }
+        // if (ageUser1 > ageUser2) {
+        //     System.out.println("User 1 is older with an age of " + Math.max(ageUser1, ageUser2));
+        // } else if (ageUser1 < ageUser2) {
+        //     System.out.println("User 2 is older with an age of " + Math.max(ageUser1, ageUser2));
+        // } else {
+        //     System.out.println("Both User 1 and User 2 are the same age");
+        // }
         
 
 
