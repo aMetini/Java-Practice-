@@ -1,68 +1,52 @@
 import java.io.IOException;
-import java.util.Random;
 import java.util.Scanner;
 
 public class Game {
-    public String firstPlayer;
-    public String secondPlayer;
+    public Player firstPlayer;
+    public Player secondPlayer;
     Scanner scan = new Scanner(System.in);
-    Random rnd = new Random();
-    Player player1 = new Player(firstPlayer);
-    Player player2 = new Player(secondPlayer);
 
-    //public void requestPlayerNames(String firstPlayer, String secondPlayer) {
     public void requestPlayerNames() {
         System.out.println("Please enter your name Player One: ");
-        firstPlayer = scan.nextLine();
+        firstPlayer = new Player(scan.nextLine());
         System.out.println("Please enter your name Player Two: ");
-        secondPlayer = scan.nextLine();
+        secondPlayer = new Player(scan.nextLine());
     }
 
-    public Player requestPlayerThrows(String firstPlayer, String secondPlayer) throws IOException {
-        int totalOfPoints1 = 0;
-        int totalOfPoints2 = 0;
+    public Player requestPlayerThrows(Player player) throws IOException {
+        int totalOfPoints = 0;
+        Dice dice = new Dice();
+        int[] playerRolls = new int[3];
         
-        int[] player1rolls = new int[3];
-        
-        for (int i = 0; i < player1rolls.length; i++) {
-            System.out.println(firstPlayer + " please press ENTER in order to throw the dice.");
-            //String key = scan.nextLine();
-            //char key = (char) System.in.read();
+        for (int i = 0; i < playerRolls.length; i++) {
+            System.out.println( player.getPlayerName() + " please press ENTER in order to throw the dice.");
             System.in.read();
-            Dice dice1 = new Dice();
-            player1rolls[i] = dice1.throwDice();
-            System.out.println(player1rolls[i]);
-            totalOfPoints1 += player1rolls[i];
-
-        }
-        System.out.println(firstPlayer + "'s final score is: " + totalOfPoints1 + "!" );
-
-        int[] player2rolls = new int[3];
-        
-        for (int i = 0; i < player2rolls.length; i++) {
-            System.out.println(secondPlayer + " please press ENTER in order to throw the dice.");
-            //String key = scan.nextLine();
-            //char key = (char) System.in.read();
-            System.in.read();
-            Dice dice2 = new Dice();
-            player2rolls[i] = dice2.throwDice();
-            System.out.println(player2rolls[i]);
-            totalOfPoints2 += player2rolls[i];
-
-        }
-        System.out.println(secondPlayer + "'s final score is: " + totalOfPoints2 + "!" );
-        return player1; 
-    }
-
-    // public void comparePointsOfPlayers(String firstPlayer, String secondPlayer) {
-    //     if (totalOfPoints(firstPlayer) > totalOfPoints(secondPlayer)) {
             
-    //     }
-    // }    
+            playerRolls[i] = dice.throwDice();
+            System.out.println(playerRolls[i]);
+            totalOfPoints += playerRolls[i];
+        }
+
+        player.setTotalPoints(totalOfPoints);
+        System.out.println(player.getPlayerName() + "'s final score is: " + player.getTotalPoints() + "!" );
+        return player; 
+    }
+
+    public void comparePointsOfPlayers(Player firstPlayer, Player secondPlayer) {
+        if(firstPlayer.getTotalPoints() > secondPlayer.getTotalPoints()) {
+            System.out.println("Player One is the winner with the most number of points!");
+        } else if(firstPlayer.getTotalPoints() < secondPlayer.getTotalPoints()) {
+            System.out.println("Player Two is the winner with the most number of points!");
+        } else {
+            System.out.println("This game is a draw! All players received the same number of points.");
+        }
+    }    
 
     public void runGame() throws IOException {
         requestPlayerNames();
-        requestPlayerThrows(firstPlayer, secondPlayer);
+        requestPlayerThrows(firstPlayer);
+        requestPlayerThrows(secondPlayer);
+        comparePointsOfPlayers(firstPlayer, secondPlayer);
     }
     
 }

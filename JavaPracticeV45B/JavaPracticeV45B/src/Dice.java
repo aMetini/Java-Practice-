@@ -18,7 +18,7 @@ public class Dice {
     public int throwDice() {
         Random rnd = new Random();
 
-        value = rnd.nextInt(6);
+        value = rnd.nextInt(1, 7);
         return value;
     }
 }
