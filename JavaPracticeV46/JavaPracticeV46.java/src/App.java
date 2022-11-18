@@ -1,4 +1,5 @@
 import java.util.*;
+import java.util.Map.Entry;
 import java.util.stream.Collectors;
 
 public class App {
@@ -163,16 +164,41 @@ public class App {
         // System.out.println("Our shuffled array looks like this: " + numArry);
 
         //Solution 8
+        // First create your ArrayList and fill it with random numbers using a for loop.
         int arrySize = 50;
         ArrayList<Integer> intArray = new ArrayList<>(arrySize);
-
+        
         for (int i = 0; i < arrySize; i++) {
             intArray.add(random.nextInt((3 - 0 ) + 0));
         }
-        //System.out.println(intArray);
+        //System.out.println(intArray);  * Printed out the array to test out my code and visually confirm correct output.
+        // Use a HashMap to build and map out integers in the array with frequency that the integer appears
+        Map<Integer, Integer> arrMap = new HashMap<Integer, Integer>();
+        for (int i : intArray) {
+            Integer freq = arrMap.get(i);
+            arrMap.put(i, freq != null ? freq++ : 1);
+        }
+        // Determine the number with the most frequency in the array using Collections.map.  When you call the Comparator, the extra override method is auto-generated.
+        Integer maxFreq = Collections.max(arrMap.entrySet(), new Comparator<Map.Entry<Integer, Integer>>() {
+            @Override
+            public int compare(Entry<Integer, Integer> o1, Entry<Integer, Integer> o2) {
+                // TODO Auto-generated method stub
+                return o1.getValue().compareTo(o2.getValue());
+            }
+        }).getKey();
         
         System.out.println("Welcome to our game! You must bet on one number between 0 and 2. Place your bet!");
         int userBet = sc.nextInt();
-
+        if(userBet == maxFreq) {
+            System.out.println("Congratulations! You guessed correctly and won a prize");
+        } else {
+            System.out.println("The most frequent number is: " + maxFreq + ". Unfortunately you did not guess correctly and did not win a prize today.");
+        }
+        // Same if conditional statement in a ternary operator format
+        final String result = userBet == maxFreq
+            ? "Congratulations! You guessed correctly and won a prize"
+            : "The most frequent number is: " + maxFreq + "Unfortunately you did not guess correctly and did not win a prize today.";
+        
+        System.out.println(result);
     }
 }
