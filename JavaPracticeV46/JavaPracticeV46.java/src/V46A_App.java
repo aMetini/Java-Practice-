@@ -2,7 +2,7 @@ import java.util.*;
 import java.util.Map.Entry;
 import java.util.stream.Collectors;
 
-public class App {
+public class V46A_App {
     public static void main(String[] args) throws Exception {
         Random random = new Random();
         Scanner sc = new Scanner(System.in);
