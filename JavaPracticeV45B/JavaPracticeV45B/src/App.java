@@ -1,4 +1,6 @@
+import java.util.Scanner;
 
+import javax.swing.SwingConstants;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -30,14 +32,45 @@ public class App {
         // System.out.println(person2);
 
         // //Solution 4
-        // Calculator calculator = new Calculator();
-        // double firstNumber = 3.9;
-        // double secondNumber = 12.3;
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Welcome to our calculator! Enter your first number.");
+        double firstNumber = sc.nextDouble();
+        System.out.println("Please enter your second number.");
+        double secondNumber = sc.nextDouble();
+        System.out.println("Please enter an operation: +, -, *, /.");
+        char operator = sc.next().charAt(0);
 
-        // System.out.println(calculator.addition(firstNumber, secondNumber));
-        // System.out.println(calculator.subtraction(firstNumber, secondNumber));
-        // System.out.println(calculator.multiplication(firstNumber, secondNumber));
-        // System.out.println(calculator.division(firstNumber, secondNumber));
+        Calculator cal = new Calculator();
+        cal.setFirstNumber(firstNumber);
+        cal.setSecondNumber(secondNumber);
+
+        switch (operator) {
+            case '+':
+            double addResult = cal.addition(cal.getFirstNumber(firstNumber), cal.getSecondNumber(secondNumber));
+            System.out.println("The solution to your solution is " + addResult);
+            break;
+
+            case '-':
+            double subResult = cal.subtraction(cal.getFirstNumber(firstNumber), cal.getSecondNumber(secondNumber));
+            System.out.println("The solution to your solution is " + subResult);
+
+            break;
+            
+            case '*':
+            double multResult = cal.multiplication(cal.getFirstNumber(firstNumber), cal.getSecondNumber(secondNumber));
+            System.out.println("The solution to your solution is " + multResult);
+
+            break;
+
+            case '/':
+            double divResult = cal.division(cal.getFirstNumber(firstNumber), cal.getSecondNumber(secondNumber));
+            System.out.println("The solution to your solution is " + divResult);
+
+            break;
+
+            default:
+            System.out.println("You did not enter a mathmatical operator.");
+        }
 
         //Solution 5
         Game game = new Game();
