@@ -1,0 +1,23 @@
+Part I – Theory 
+1. What is a package? Name two reasons why it is good for us to use packages in our programs. 
+A package is a group of related classes. Packages are used to avoid confusion or name conflicts by providing a unique namespace for each type (i.e. classes and interfaces) contained in your package. It also provides a better way to organize and structure your project.
+2. What is encapsulation? How do we achieve it in java? 
+Encapsulation entails wrapping an object, method, or members of a class with access modifiers so that the programmer can control direct access of these objects from users. These classes and objects can be sent throughout the program based on whether the access modifier is public, protected or private.
+3. What are access modifiers? Explain the difference between the four types of access modifiers 
+in java. 
+There are four access modifiers in Java: public, protected, private, and no modifier. 
+Public: members of a class marked public it can be accessed by other code or classes. 
+Private: members of a class marked private can only be accessed by members of the same class.
+No-modifier: By default, no modifier members of a class are public but only accessible within its own package. They cannot be accessed outside of their package. 
+Protected: typically applies to abstract classes and inheritance. Members can only be accessed within its own package and subclasses of its class in another package. 
+4. What is inheritance? 
+Inheritance is a classes availability to inherit properties of other classes (a super class or abstract class usually)
+5. In some other programming languages, methods are referred to as functions and procedures. Seek information on the internet and read about differences between functions and procedures. After that, give an example of how a function and how a procedure look like in java. 
+6. What is modularization? 
+Modularization is the process of breaking down a function into smaller modules or functions that can be used interchangeably. 
+7. What are the advantages of modularizing your code? 
+Better code maintenance and management. 
+8. What is a class method? 
+A method that is connected to a class rather than an instance of an object.  One does not need to create an instance of a class in order to call the method. These methods are static. 
+9. What is method overload? Give an example on when it is suitable to overload a method. 
+The ability for a class to have more than one method while using the same method name. These methods are differentiated based on the different parameters that the method takes in.
