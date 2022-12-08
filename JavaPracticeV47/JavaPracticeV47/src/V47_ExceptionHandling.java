@@ -1,4 +1,4 @@
-public class V46B_App {
+public class V47_ExceptionHandling {
     /*
      * 1. What is an exception in a program?
      * An exception is an error event that occurs at or after compile. The event

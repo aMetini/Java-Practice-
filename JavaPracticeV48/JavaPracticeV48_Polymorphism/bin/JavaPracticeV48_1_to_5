@@ -1,0 +1,8 @@
+1.  Explain with your words what is Polymorphism. 
+Polymorphism refers to the ability for a variable, function or class object to take on multiple forms.
+2.  Explain with your words what is an Abstract class. 
+Abstract classes are typically super classes that allow for polymorphism. It is restricted and cannot be used to create new class objects. Instead, a class must inherit the abstract class in order to access the classes abstract methods or constructors.
+3.  Why we cannot instantiate an abstract class in java? 
+You cannot instantiate an abstract class because it is incomplete (i.e. abstract), which will prevent the compiler to compile the code.
+4.  Explain with your words what is a concrete class. 
+A concrete class is a complete whose methods are all implemented.
